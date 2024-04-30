@@ -1,0 +1,13 @@
+# target to pull these properties from the git and inject into config map
+# verify industry standards for property management between config server and config map
+#
+
+# registry - server platform properties
+eureka.instance.hostname=localhost
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+# registry - non-server platform properties
+eureka.instance.hostname=localhost
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
