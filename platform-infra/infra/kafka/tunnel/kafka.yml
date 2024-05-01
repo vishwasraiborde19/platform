@@ -1,0 +1,94 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: Kafka
+metadata:
+  name: my-cluster
+spec:
+  kafka:
+    version: 3.6.1
+    replicas: 3
+    listeners:
+      - name: minikube
+        port: 9094
+        type: internal
+        tls: false
+        configuration:
+          brokers:
+            - broker: 0
+              advertisedHost: 127.0.0.1
+              advertisedPort: 19094
+            - broker: 1
+              advertisedHost: 127.0.0.1
+              advertisedPort: 19095
+            - broker: 2
+              advertisedHost: 127.0.0.1
+              advertisedPort: 19096
+    storage:
+      type: ephemeral
+  zookeeper:
+    replicas: 3
+    storage:
+      type: ephemeral
+  entityOperator:
+    topicOperator: {}
+    userOperator: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cluster-kafka-0
+spec:
+  type: LoadBalancer
+  selector:
+    statefulset.kubernetes.io/pod-name: my-cluster-kafka-0
+    strimzi.io/cluster: my-cluster
+    strimzi.io/kind: Kafka
+    strimzi.io/name: my-cluster-kafka
+    strimzi.io/pool-name: kafka
+  ports:
+    - protocol: TCP
+      port: 19094
+      targetPort: 9094
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cluster-kafka-1
+spec:
+  type: LoadBalancer
+  selector:
+    statefulset.kubernetes.io/pod-name: my-cluster-kafka-1
+    strimzi.io/cluster: my-cluster
+    strimzi.io/kind: Kafka
+    strimzi.io/name: my-cluster-kafka
+    strimzi.io/pool-name: kafka
+  ports:
+    - protocol: TCP
+      port: 19095
+      targetPort: 9094
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-cluster-kafka-2
+spec:
+  type: LoadBalancer
+  selector:
+    statefulset.kubernetes.io/pod-name: my-cluster-kafka-2
+    strimzi.io/cluster: my-cluster
+    strimzi.io/kind: Kafka
+    strimzi.io/name: my-cluster-kafka
+    strimzi.io/pool-name: kafka
+  ports:
+    - protocol: TCP
+      port: 19096
+      targetPort: 9094
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata:
+  name: my-topic
+  labels:
+    strimzi.io/cluster: my-cluster
+spec:
+  partitions: 3
+  replicas: 3
