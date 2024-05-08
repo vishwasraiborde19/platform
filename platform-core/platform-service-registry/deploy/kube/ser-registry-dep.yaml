@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: disco
+  labels:
+    app: disco
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: disco
+  template:
+    metadata:
+      name: disco
+      labels:
+        app: disco
+    spec:
+      containers:
+        - name: disco
+          image: vishwasraiborde19/discovery-server:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8761
+      restartPolicy: Always
+      

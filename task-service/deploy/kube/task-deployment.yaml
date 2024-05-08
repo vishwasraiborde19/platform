@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app-deployment
+  name: task-ms
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-deployment
+      app: task-ms
   template:
     metadata:
       labels:
-        app: app-deployment
+        app: task-ms
     spec:
       containers:
-        - name: app-deployment
-          image: vishwasraiborde19/tasks:v1
+        - name: task-ms
+          image: vishwasraiborde19/task-ms:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8081
+            - containerPort: 9000
       restartPolicy: Always
