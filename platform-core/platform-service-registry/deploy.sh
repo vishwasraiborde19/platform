@@ -17,6 +17,4 @@ docker image push $REPO_NAME_SPACE/$IMAGE_NAME:$TAG_VERSION
 kubectl apply -f deploy/kube/ser-registry-dep.yaml
 kubectl apply -f deploy/kube/ser-registry-svc.yaml
 
-minikube service discover-server-svc --url
-
-$SHELL
+#minikube service discover-server-svc -n platform --url

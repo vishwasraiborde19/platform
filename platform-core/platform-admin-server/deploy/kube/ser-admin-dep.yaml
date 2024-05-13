@@ -1,7 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: admin-server-dep
+  name: admin-server
+  namespace: platform
   labels:
     app: admin-server
 spec:
@@ -16,7 +17,7 @@ spec:
         app: admin-server
     spec:
       containers:
-        - name: disco
+        - name: admin
           image: vishwasraiborde19/admin-server:latest
           imagePullPolicy: IfNotPresent
           ports:

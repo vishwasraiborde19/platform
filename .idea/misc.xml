@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/platform-core/platform-persistence-api" />
+    <file type="web" url="file://$PROJECT_DIR$/user-service" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
@@ -9,6 +13,8 @@
         <option value="$PROJECT_DIR$/platform-core/platform-service-registry/pom.xml" />
         <option value="$PROJECT_DIR$/platform-core/platform-config-server/pom.xml" />
         <option value="$PROJECT_DIR$/platform-core/platform-admin-server/pom.xml" />
+        <option value="$PROJECT_DIR$/user-service/pom.xml" />
+        <option value="$PROJECT_DIR$/platform-core/platform-common-domain/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />

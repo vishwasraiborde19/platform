@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: platform
-  name: task-ms
+  name: user-ms
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: task-ms
+      app: user-ms
   template:
     metadata:
       labels:
-        app: task-ms
+        app: user-ms
     spec:
       containers:
         - name: task-ms
-          image: vishwasraiborde19/task-ms:latest
+          image: vishwasraiborde19/user-ms:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 9000
+            - containerPort: 9001
       restartPolicy: Always

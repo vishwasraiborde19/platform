@@ -8,20 +8,35 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="platform-core" />
-        <module name="task-service" />
         <module name="platform-service-registry-server" />
         <module name="platform-admin-server" />
         <module name="platform-config-server" />
+        <module name="platform-common-domain" />
+        <module name="task-service" />
+        <module name="user-service" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.32/17d46b3e205515e1e8efd3ee4d57ce8018914163/lombok-1.18.32.jar" />
+        </processorPath>
+        <module name="platform-persistence-api.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="user-service.main" target="17" />
+      <module name="user-service.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="platform-admin-server" options="-parameters" />
+      <module name="platform-common-domain" options="-parameters" />
       <module name="platform-config-server" options="-parameters" />
       <module name="platform-core" options="-parameters" />
       <module name="platform-service-registry-server" options="-parameters" />
       <module name="task-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
     </option>
   </component>
 </project>

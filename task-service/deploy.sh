@@ -18,6 +18,4 @@ docker image push $REPO_NAME_SPACE/$IMAGE_NAME:$TAG_VERSION
 kubectl apply -f deploy/kube/task-deployment.yaml
 kubectl apply -f deploy/kube/task-service.yaml
 
-minikube service task-ms-svc --url
-
-$SHELL
+#minikube service task-ms-svc -n platform --url

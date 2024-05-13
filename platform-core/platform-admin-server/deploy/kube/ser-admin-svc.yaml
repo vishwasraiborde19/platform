@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: admin-server-svc
+  namespace: platform
 spec:
   selector:
     app: admin-server
@@ -10,6 +11,5 @@ spec:
       port: 8080
       targetPort: 8080
   type: NodePort
-  externalIPs:
-    - 192.168.49.2
+
   
