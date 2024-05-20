@@ -1,8 +1,7 @@
-package com.task.sservice.controller;
+package com.task.controller;
 
-import com.platform.platform.common.domain.task.Task;
-import com.task.sservice.service.TaskService;
-import io.swagger.v3.oas.models.security.SecurityScheme;
+import com.platform.common.domain.task.Task;
+import com.task.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

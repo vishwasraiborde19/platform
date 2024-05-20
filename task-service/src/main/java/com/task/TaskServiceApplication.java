@@ -1,4 +1,4 @@
-package com.task.sservice;
+package com.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EntityScan("com.platform.platform.common.domain.*")
+@EntityScan("com.platform.common.domain.*")
 public class TaskServiceApplication {
 
     public static void main(String[] args) {

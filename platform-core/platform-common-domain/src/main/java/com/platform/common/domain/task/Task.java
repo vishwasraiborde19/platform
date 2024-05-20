@@ -1,4 +1,4 @@
-package com.platform.platform.common.domain.task;
+package com.platform.common.domain.task;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

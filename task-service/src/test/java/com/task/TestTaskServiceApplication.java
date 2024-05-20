@@ -1,4 +1,4 @@
-package com.task.sservice;
+package com.task;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;

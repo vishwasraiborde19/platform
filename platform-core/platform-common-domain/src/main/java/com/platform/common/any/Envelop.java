@@ -1,4 +1,4 @@
-package com.platform.platform.common.domain.messaging.any;
+package com.platform.common.any;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

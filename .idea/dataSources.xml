@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@localhost" uuid="7cd1394b-5874-4495-b975-f5fac91e1bfc">
+      <driver-ref>cassandra</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.dbschema.CassandraJdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:cassandra://localhost:9042</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" value="9042" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="true" />
+        <property name="com.intellij.clouds.kubernetes.db.resource" value="my-release-cassandra-0" />
+        <property name="com.intellij.clouds.kubernetes.db.context" value="minikube" />
+        <property name="com.intellij.clouds.kubernetes.db.resource.type" value="Pod" />
+        <property name="com.intellij.clouds.kubernetes.db.namespace" value="default" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" value="9042" />
+      </jdbc-additional-properties>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>

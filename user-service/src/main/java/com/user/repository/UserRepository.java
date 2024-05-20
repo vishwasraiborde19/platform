@@ -1,7 +1,7 @@
-package com.task.sservice.repository;
+package com.user.repository;
 
 
-import com.platform.platform.common.domain.task.Task;
+import com.platform.common.domain.user.User;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,9 +11,9 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface TaskRepository extends JpaRepository<Task,Integer> {
+public interface UserRepository extends JpaRepository<User,Integer> {
 
-    @Query("select  t from Task t")
-    List<Task> getAll();
-    void deleteByTaskId(Integer id);
+    @Query("select  t from User t")
+    List<User> getAll();
+    void deleteByUserId(Integer id);
 }
