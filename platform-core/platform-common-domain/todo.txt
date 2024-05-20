@@ -1,0 +1,3 @@
+add db specific profiles
+ex - mysql
+ex - cassandra

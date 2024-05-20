@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="platform-core" />
         <module name="platform-service-registry-server" />
+        <module name="git" />
         <module name="platform-admin-server" />
         <module name="platform-config-server" />
         <module name="platform-common-domain" />

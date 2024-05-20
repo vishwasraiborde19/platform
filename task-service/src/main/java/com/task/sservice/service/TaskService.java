@@ -1,35 +1,34 @@
 package com.task.sservice.service;
 
-import com.netflix.discovery.converters.Auto;
-import com.platform.platformcommondomain.domain.task.Task;
+import com.platform.platform.common.domain.task.Task;
 import com.task.sservice.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+
 import java.util.List;
-//ta
+import java.util.Optional;
+
 
 @Service
 public class TaskService {
-a
+
     @Autowired
     private TaskRepository taskRepository;
 
     public Task saveOrUpdateTask(Task task){
-        taskRepository.saveAndFlush(task);
-        return task;
+       return taskRepository.saveAndFlush(task);
     }
 
-    public Task get(Task task){
-        return taskRepository.getReferenceById(task.getTaskId());
+    public Optional<Task> get(Integer id){
+        return taskRepository.findById(id);
     }
 
-    public List<Task> getAll(Task task){
-        return taskRepository.getTasks();
+    public List<Task> getAll(){
+        return taskRepository.getAll();
     }
 
-    public Task delete(Task task){
-        return taskRepository.deleteTaskByID(task.getTaskId());
+    public void delete(Integer id){
+        taskRepository.deleteByTaskId(id);
     }
 }
